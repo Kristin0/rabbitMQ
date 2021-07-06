@@ -38,3 +38,6 @@ sudo apt-get install -y erlang-base \
 
 ## Install rabbitmq-server and its dependencies
 sudo apt-get install rabbitmq-server -y --fix-missing
+sudo apt-get install apt-transport-https
+service rabbitmq-server start
+rabbitmq-plugins enable rabbitmq_management
