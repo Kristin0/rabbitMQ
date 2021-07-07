@@ -13,3 +13,8 @@ resource "aws_instance" "rmq" {
         Name = "rabbit"
     }
 }
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.rmq.id
+  allocation_id =  "eipalloc-00c75502b18692f90"
+}
