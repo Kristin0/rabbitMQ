@@ -3,6 +3,14 @@ provider "aws" {
     
 }
 
+terraform {
+  backend "s3" {
+    bucket = "epam-project-tfstate"
+    key = "epam2/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 resource "aws_instance" "rmq" {
     ami = "ami-07ebfd5b3428b6f4d"
     instance_type = "t2.micro"
